@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Webcam Snapshots With Filters</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body >
+    <div class="container text-center">
+            <h1>Accessing Webcam with JS</h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" >
+                <video autoplay="true" id="video" idth="650" height="490"></video>
+            </div>
+            <div class="col-md-6">
+                <canvas id="canvas" width="650" height="490" ></canvas>
+            </div>
+        </div>
+    </div>
+   
+   
+   <script type=text/javascript>
+
+        function validate(){
+          if (remember.checked == 1){
+            alert("checked") ;
+           video.style.cssText = "   transform: rotateY(180deg);-webkit-transform:rotateY(180deg); /* Safari and Chrome */-moz-transform:rotateY(180deg); /* Firefox */"
+          } else {
+            alert("You didn't check it! Let me check it for you.")
+           video.style.cssText = ""
+          }
+        }
+
+      </script>
+      <p>
+    Mirror My Video  <input id="remember"  name="remember" type="checkbox" onclick="validate()" />
+</p>
+
+<div class="row">
+    <div class="container text-center mb-5">
+        <button class="btn btn-outline-success" id="capture">CAPTURE</button>
+    </div> 
+   <div class="container text-center mb-5">
+        <button class="btn btn-outline-success" id="noeffect">No Effects</button>
+    </div>
+    
+    <div>
+        <button  class="btn btn-warning" onclick="window.location.href='/index.html'">Home</button>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <button class="btn btn-outline-success" id="blur">BLUR</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-primary" id="brightness">BRIGHTNESS</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-warning" id="contrast">CONTRAST</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-danger" id="invert">INVERT</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-secondary" id="saturate">SATURATE</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-outline-success" id="sepia">SEPIA</button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
